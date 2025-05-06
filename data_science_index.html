@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <h2 class="sidebar-title">My Blog</h2>
+        <nav class="sidebar-nav">
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="origami_index.html" >Origami Blog</a></li>
+            <li><a href="data_science_index.html" class="active">Data Science</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer"> 
+            <h3 class="sidebar-subtitle">Contact Me</h3>
+            <nav class="sidebar-nav">
+                <ul class="contact-links">
+                <li>
+                    <a href="https://github.com/bonkh" target="_blank">
+                    <img src="Images/git_icon.png" alt="GitHub" class="icon"> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/caokhoihuynh" target="_blank">
+                    <img src="Images/kaggle_icon.png" alt="Kaggle" class="icon"> Kaggle
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/khoi-huynh-b528b3205/" target="_blank">
+                    <img src="Images/linkedin_icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:caokhoi20092003@gmail.com">
+                    <img src="Images/gmail_icon.png" alt="Email" class="icon"> Email
+                    </a>
+                </li>
+                </ul>
+            </nav>
+        </div>
+        <button id="collapse-button" class="collapse-button">«</button>
+    </aside>
+
+    <div class="page-container"> 
+        <div class="main-content">
+            <main class="home-main"> 
+                <header class="blog-header">
+                    <h1 class="blog-title">Data Science</h1>
+                </header>
+
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="portfolio">Portfolio</button>
+                    <button class="tab-button" data-tab="blog">Blog</button>
+                </div>
+
+        
+
+                <div id="portfolio" class="tab-content active">
+                    <h3>My Portfolio Projects</h3>
+                    <p>Here are my Data Science projects like Machine Learning models, data visualizations, etc.</p>
+                    <!-- List portfolio items here -->
+
+                    <script src="js/portfolio.js"></script>
+                </div>
+
+                <div id="blog" class="tab-content">
+                <h3>Data Science Blog Posts</h3>
+                <p>Thoughts and articles about my learning journey and experiences.</p>
+                <!-- List blog posts here -->
+                </div>
+
+
+                <script src="js/tabs.js"></script>
+
+            
+            </main>
+            <footer class="site-footer">
+                <p>&copy; 2025 Cao Khoi Huynh</p>
+              </footer>
+        </div>
+    </div>
+
+   
+
+    <script src="js/sidebar.js"></script>
+
+</body>
+</html>
