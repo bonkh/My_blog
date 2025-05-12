@@ -1,6 +1,6 @@
 .sidebar {
     background-color: var(--dark-blue);
-    color: var(--light-yellow);
+    color: var(--light-gray);
     width: 250px;
     min-width: 250px;
     flex-shrink: 0;
@@ -12,7 +12,7 @@
     height: 100vh; /* Full screen height */
     overflow: hidden; /* Prevent sidebar from scrolling */
     transition: width 0.3s ease;
-    z-index: 1000; /* Stays on top */
+    /* z-index: 1000; Stays on top */
 }
 
 .sidebar.collapsed {
@@ -49,7 +49,7 @@
 
 .sidebar-nav a {
     display: block;
-    color: var(--light-yellow);
+    color: var(--light-gray);
     text-decoration: none;
     font-size: 1.1rem;
     padding: 5px 10px;
@@ -69,7 +69,7 @@
 
 .sidebar-nav a:hover:not(.active) {
     opacity: 0.6;
-    color: var(--light-yellow); 
+    color: var(--light-gray); 
     background-color: transparent;
 }
 
@@ -82,7 +82,7 @@
     position: absolute;
     top: 20px;
     right: -15px;
-    background-color: var(--light-yellow);
+    background-color: var(--light-gray);
     color: var(--dark-blue);
     border: none;
     border-radius: 50%;
@@ -109,7 +109,7 @@
     font-size: 1.3rem;
     margin-top: 30px;
     margin-bottom: 10px;
-    color:  var(--light-yellow);
+    color:  var(--light-gray);
     text-align: center;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
@@ -136,14 +136,14 @@
 .contact-links a {
     display: flex;
     align-items: center;
-    color: var(--light-yellow);
+    color: var(--light-gray);
     text-decoration: none;
     font-size: 1.1rem;
 }
 
 
 .contact-links a:hover {
-    background-color: var(--light-yellow);
+    background-color: var(--light-gray);
     color: var(--dark-blue);
     border-radius: 8px;
     padding: 3px 8px;

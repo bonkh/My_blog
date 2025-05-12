@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Dashboard with Integrated Chatbot</title><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sidebar.css">
+</head>
+<body>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <h2 class="sidebar-title">My Blog</h2>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../origami_index.html">Origami Blog</a></li>
+            <li><a href="../../../data_science_index.html"  class="active">Data Science</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer"> 
+            <h3 class="sidebar-subtitle">Contact Me</h3>
+            <nav class="sidebar-nav">
+                <ul class="contact-links">
+                <li>
+                    <a href="https://github.com/bonkh" target="_blank">
+                    <img src="../../../Images/git_icon.png" alt="GitHub" class="icon"> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/caokhoihuynh" target="_blank">
+                    <img src="../../../Images/kaggle_icon.png" alt="Kaggle" class="icon"> Kaggle
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/khoi-huynh-b528b3205/" target="_blank">
+                    <img src="../../../Images/linkedin_icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:caokhoi20092003@gmail.com">
+                    <img src="../../../Images/gmail_icon.png" alt="Email" class="icon"> Email
+                    </a>
+                </li>
+                </ul>
+            </nav>
+        </div>
+        <button id="collapse-button" class="collapse-button">«</button>
+    </aside>
+
+    <div class="page-container">
+        <main class="main-content">
+            <section class="project-detail">
+                <div class="project-info">
+                  <h2>— PROJECT NAME</h2>
+                  <p>Stock Market Dashboard with Integrated Chatbot</p>
+              
+                  <h2>— TIME</h2>
+                  <p>11/2024 - 12/2024</p>
+
+                  <h2>— TEAM SIZE</h2>
+                  <p>Huynh Cao Khoi (Team leader)</p>
+                  <p>Nguyen Van Quang Hung </p>
+                  <p>Hoang Trung Nam</p>
+                  <p>Chiem Binh Nguyen</p>
+                  <p>Huynh Tri Nhan</p>
+                  <p>Nguyen Duc Manh</p>
+              
+                  <h2>— ROLE</h2>
+                  <ul>
+                    <li>Team leading</li>
+                    <li>Data collecting</li>
+                    <li>Database management</li>
+                    <li>Dashboard building</li>
+                  </ul>
+                  
+              
+                  <h2>— TOOLS</h2>
+                  <ul>
+                    <li>Data Collecting: Selenium, Request, Airflow</li>
+                    <li>Database management: PostgesQL</li>
+                    <li>Dashboard building: Streamlit, Plotly</li>
+                  </ul>
+                  
+                  <!-- <p>Python, Airflow, Streamlit,Plotly</p> -->
+              
+                </div>
+              
+                <div class="project-description">
+                    <p>
+                        This project is the final assignment for the course <strong>"Intelligent Analysis for Data Science"</strong> , where I have to work in team, and our task is 
+                        developing an interactive dashboard to present data analysis for a chosen topic.
+                        Our team selected the Vietnam stock market as our focus, as it is a just a new topic for us, we hope that, from this project, beside the technical knowledge, we will also know more about investing and finance.
+                    </p>
+                    <p>
+                        The goal of this project is to create a dashboard that visualizes the analysis on Vietnam stock market, also included a chatbot to support the newcomers.
+                        The chatbot can summarize recent news from articles and answer basic questions about the market state and trend.
+                    </p>
+                    <p>
+                        For the data sources, we collected two type of data: Historical stock market data from <a href="https://finance.vietstock.vn/" target="_blank">Vietstock Finance</a> and article data from <a href="https://vnexpress.net/" target="_blank">VNExpress</a> and <a href="https://vietstock.vn/" target="_blank">Vietstock</a>
+                        The collected data will be stored in a PostgesQL database, I hosted it in <a href="https://render.com/" target="_blank">Render database</a>.
+                        The whole process is managed with Airflow.
+                    </p>
+
+                    <div class="vertical-figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/data.png" alt="Selling data" class="clickable-img" style="width:400px;">
+                            <figcaption>The data collecting pipeline</figcaption>
+                        </figure>
+                    </div>
+                    <p>So the data will look like this: </p>
+
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/database.png" alt="plot1" class="clickable-img" style="width:400px;">
+                            <figcaption>Database schema</figcaption>
+                        </figure>
+                        <figure class="figure-center">
+                            <img src="./Images/company_info.webp" alt="plot1" class="clickable-img" style="width:400px;">
+                            <figcaption>The information of companies</figcaption>
+                        </figure>
+                        <figure class="figure-center">
+                            <img src="./Images/stock_data.webp" alt="plot2" class="clickable-img" style="width:400px;">
+                            <figcaption>Stock market data</figcaption>
+                        </figure>
+                        <figure class="figure-center">
+                            <img src="./Images/article_data.png" alt="plot2" class="clickable-img" style="width:400px;">
+                            <figcaption>Article data</figcaption>
+                        </figure>
+                    </div>
+
+                 
+                  <p> After performing data preprocessing and cleaning we did exploratory data analysis to gain insights about the stock market, all of them are shown in the dashboard below.</p>
+
+                  <p>Our dashboard, will have a totally four pages:The main page, overview page, detail page and the chatbot page.
+                    The main page will give us introduction about the dashboard, go with the lastest articles about stock.</p>
+                  <div class="vertical-figure-container">
+                    <figure class="figure-center">
+                        <img src="./Images/main_page_1.png" alt="plot1" class="clickable-img" style="width:400px;">
+                        <figcaption>Introduction and the lastest summary of the stock market</figcaption>
+                    </figure>
+                    <figure class="figure-center">
+                        <img src="./Images/main_page_2.png" alt="plot2" class="clickable-img" style="width:400px;">
+                        <figcaption>Latest news about stock market</figcaption>
+                    </figure>
+                </div>
+                <p> The next section of the dashboard provides an overview of the stock activity in the previous day. 
+                    It display the change in stock prices, the market index value and and key financial metrics for the most promising companies.
+                    This page help everyone easily notice about the recent market's performance.
+                </p>
+                <div class="vertical-figure-container">
+                    <figure class="figure-center">
+                        <img src="./Images/overview_page.png" alt="plot1" class="clickable-img" style="width:400px;">
+                        <figcaption>The change of the stock prices</figcaption>
+                    </figure>
+                    <figure class="figure-center">
+                        <img src="./Images/overview_page_2.png" alt="plot2" class="clickable-img" style="width:400px;">
+                        <figcaption>Index value and top companies by financial metrics</figcaption>
+                    </figure>
+                </div>
+                <p> Based on the overview, we can identify low-risk candidates which worth to explore futher. To dive deeper in these companies, 
+                     we can move to the detail page.</p>
+                <p>The detail page will display the detail inforamtion about the stock of a company (we can choose the company code and some addtional parameter in the sidebar)
+                    The infomation will consist of the detailed price change by minutes, the candle plot which sell and buy signal, the future prediction, the analysis genrerated by LLM and some news about the company.
+                </p>
+                <div class="figure-container">
+                    <figure class="figure-center">
+                        <img src="./Images/detail_page.png" alt="plot1" class="clickable-img" style="width:500px;">
+                        <figcaption>Control bar and detail stock price change in a day by hours</figcaption>
+                    </figure>
+                    <figure class="figure-center">
+                        <img src="./Images/detail_page_2.png" alt="plot2" class="clickable-img" style="width:500px;">
+                        <figcaption>The candle plot and the future price prediction for the stock code</figcaption>
+                    </figure>
+                    <figure class="figure-center">
+                        <img src="./Images/detail_page_3.png" alt="plot2" class="clickable-img" style="width:500px;">
+                        <figcaption>LLM's analysis and some article related to the stock code</figcaption>
+                    </figure>
+                </div>
+
+                <p>
+                    And finally, the third section of our dashboard is the chatbot, which will aggregate and extract the information from the financial news articles
+                     to answer our questions about the current stock trends and events.
+                </p>
+
+                <div class="figure-container">
+                    <figure class="figure-center">
+                        <img src="./Images/chatbot_page.png" alt="plot1" class="clickable-img" style="width:500px;">
+                        <figcaption>Chatbot</figcaption>
+                    </figure>
+                </div>
+
+                <!-- <p> Beside that, to ehance the user experience, also make our dashboard become friendlier</p> -->
+                <p> In this project, beside my main responsiblities: building the data collecting pipeline, orchestrating it with AirFlow and developing the overview page in dashboard, I am also a team leader.
+                    In this role, I have to assign tasks for my team members based on their strength, create the project plan then trace our developing process.
+                   
+                </p>
+                <p>
+                    It was a good experience where I not only improved my technical skills but also learned a lot about project planning, leadership, and effective teamwork.
+                  </p>
+                  <p>
+                    Overall, this project give me greate chance to learn about financial data, natural language processing techniques, and  apply intelligent analysis in a real-world context.
+                  </p>
+                
+                </div>
+            </section>
+            <footer class="site-footer">
+                <p>&copy; 2025 Cao Khoi Huynh</p>
+            </footer>
+            
+        </main>
+        
+    </div>
+    <script src="../../../js/sidebar.js"></script>
+    <script src="../../../js/post-navigation.js"></script>
+    <script src="../../../js/modal.js"></script>
+
+</body>
+</html>

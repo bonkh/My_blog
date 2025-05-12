@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origami Style Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sidebar.css">
+</head>
+<body>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+      
+
+    <aside class="sidebar" id="sidebar">
+        <h2 class="sidebar-title">My Blog</h2>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../origami_index.html">Origami Blog</a></li>
+            <li><a href="../../../data_science_index.html"  class="active">Data Science</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer"> 
+            <h3 class="sidebar-subtitle">Contact Me</h3>
+            <nav class="sidebar-nav">
+                <ul class="contact-links">
+                <li>
+                    <a href="https://github.com/bonkh" target="_blank">
+                    <img src="../../../Images/git_icon.png" alt="GitHub" class="icon"> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/caokhoihuynh" target="_blank">
+                    <img src="../../../Images/kaggle_icon.png" alt="Kaggle" class="icon"> Kaggle
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/khoi-huynh-b528b3205/" target="_blank">
+                    <img src="../../../Images/linkedin_icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:caokhoi20092003@gmail.com">
+                    <img src="../../../Images/gmail_icon.png" alt="Email" class="icon"> Email
+                    </a>
+                </li>
+                </ul>
+            </nav>
+        </div>
+        <button id="collapse-button" class="collapse-button">«</button>
+    </aside>
+
+    <div class="page-container">
+        <main class="main-content">
+            <section class="project-detail">
+                <div class="project-info">
+                  <h2>— PROJECT NAME</h2>
+                  <p>Origami Style Prediction</p>
+              
+                  <h2>— TIME</h2>
+                  <p>07/2024 - 08/2024</p>
+
+                  <h2>— TEAM SIZE</h2>
+                  <p>Personal project</p>
+                  <h2>— ROLE</h2>
+                  <ul>
+                    <li>Collect and preprocess the images</li>
+                    <li>Experiment with various classification models</li>
+                    <li>Deploy the trained model</li>
+                  </ul>
+                  
+              
+                  <h2>— TOOLS</h2>
+                  <p>Python, opencv, keras, tensorflow, streamlit</p>
+              
+                </div>
+              
+                <div class="project-description">
+                  <p>
+                    This is the project where I try to use my Data Science knowledge to solve a Origami question: <strong>"Which origamist your folding style is the most similar?"</strong>
+                     I approached this as an image classification problem, where each image represents an origami model and the label corresponds to the origamist who created it.
+                  </p>
+                  <p>For the data, I collected the images from origmists' website, or their social account. We will have 15 origamists, which various of style and folding techniques, create a rich variety for the classification task.</p>
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/origami_models.png" alt="plot1"  class="clickable-img" style="width:700px;">
+                            <figcaption>Origamists and their models</figcaption>
+                        </figure>
+                    </div>
+
+                  <p>At first, I realize the problems is much more challenge than I expected. Unlike some typical classifcation tasks such as distinguish between dogs and cats by some details like the eyes, the ears, or even the color.
+                    , with Origami, everything is more difficult, the topic of authors is not specific to just an animal piece or anything, they can fold everything. That's why the barier between them become more abstract like the style of folding.
+                  </p>
+                  <p>Beside that, there is a lot of factor of an images which can noised our prediction, like the background, or the watermark, so we have to remove them. Here, I used a U-net model for processing step </p>
+
+                  <p>The result is look like that</p>
+
+                  <div class="figure-container">
+                    <figure class="figure-center">
+                        <img src="./Images/Archaeopteryx.jpg" alt="plot1" class="clickable-img" style="width:400px;">
+                        <figcaption>Original image</figcaption>
+                    </figure>
+                    <figure class="figure-center">
+                        <img src="./Images/archaeo_removed_background.png" alt="plot2" class="clickable-img"style="width:400px;">
+                        <figcaption>Processed image</figcaption>
+                    </figure>
+                </div>
+
+                 
+                <p>With the model, I have tried with multiple Resnet-based models, and many training methods like transfer learning or training the whole model from scratch, then pick the one which give me the best result in the validation set.</p>
+                <p>Finally, I deployed the model with Streamlit, the simple demo of the model will look like this:</p>
+                <div class="figure-container">
+                    <figure class="figure-center">
+                        <img src="./Images/normal_UI.png" alt="plot1" class="clickable-img" style="width:400px;">
+                        <figcaption>The simple interface</figcaption>
+                    </figure>
+                    <figure class="figure-center">
+                        <img src="./Images/prediction.png" alt="plot2" class="clickable-img" style="width:400px;">
+                        <figcaption>Prediction for an image</figcaption>
+                    </figure>
+                    <figure class="figure-center">
+                        <img src="./Images/combined_prediction.png" alt="plot2" class="clickable-img" style="width:300px;">
+                        <figcaption>Combined prediction for multiple images</figcaption>
+                    </figure>
+                </div>
+                <p>The workflow of the application is simple. You just simply upload an image of a origami model, then the model will make the prediction and extract top 3 similar origamists.
+                    When you upload more images, the finally prediction will be combined.
+                </p>
+               
+                <p>With this project, I have learned a lot about methods in image processing, and how we can use many training strategy for a deep learning model.</p>
+                
+                </div>
+              </section>
+            
+
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2025 Cao Khoi Huynh</p>
+        </footer>
+    </div>
+    <script src="../../../js/sidebar.js"></script>
+    <script src="../../../js/post-navigation.js"></script>
+    <script src="../../../js/modal.js"></script>
+
+</body>
+</html>
