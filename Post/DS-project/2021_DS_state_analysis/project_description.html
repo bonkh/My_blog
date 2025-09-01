@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sidebar.css">
+</head>
+<body>
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+      
+
+    <aside class="sidebar" id="sidebar">
+        <h2 class="sidebar-title">My Blog</h2>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../origami_index.html">Origami Blog</a></li>
+            <li><a href="../../../data_science_index.html"  class="active">Data Science</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer"> 
+            <h3 class="sidebar-subtitle">Contact Me</h3>
+            <nav class="sidebar-nav">
+                <ul class="contact-links">
+                <li>
+                    <a href="https://github.com/bonkh" target="_blank">
+                    <img src="../../../Images/git_icon.png" alt="GitHub" class="icon"> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/caokhoihuynh" target="_blank">
+                    <img src="../../../Images/kaggle_icon.png" alt="Kaggle" class="icon"> Kaggle
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/khoi-huynh-b528b3205/" target="_blank">
+                    <img src="../../../Images/linkedin_icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:caokhoi20092003@gmail.com">
+                    <img src="../../../Images/gmail_icon.png" alt="Email" class="icon"> Email
+                    </a>
+                </li>
+                </ul>
+            </nav>
+        </div>
+        <button id="collapse-button" class="collapse-button">«</button>
+    </aside>
+
+    <div class="page-container">
+        <main class="main-content">
+            <section class="project-detail">
+                <div class="project-info">
+                    <div class="info-column">
+                      <h2>— PROJECT NAME</h2>
+                      <p>2022 Data Science and Machine Learning State analysis</p>
+                  
+                      <h2>— TIME</h2>
+                      <p>11/2023 - 01/2024</p>
+                  
+                      <h2>— PROJECT TEAM</h2>
+                      <p>Pham Le Tu Nhi (Team leader)</p>
+                      <p>Huynh Cao Khoi </p>
+                      <p>Hoang Trung Nam </p>
+                    </div>
+                  
+                    <div class="info-column">
+                      <h2>— ROLE</h2>
+                      <ul>
+                        <li>Data Preprocessing</li>
+                        <li>Exploratory Data Analysis (EDA)</li>
+                      </ul>
+                  
+                      <h2>— TOOLS</h2>
+                      <ul>
+                        <li>Data Preprocessing: Numpy, Pandas</li>
+                        <li>EDA: Plotly, Matplotlib, Seaborn,...</li>
+                      </ul>
+                    </div>
+                  </div>
+              
+                <div class="project-description">
+                    <p>
+                        This is one of my first project about Data Science I finished in the course <strong>Programming for Data Science</strong>.
+                         In this course, we concentrate on building up our programming skills, especially in using data processing and analysis skills with Python and some packages like Numpy or Pandas.
+                        In this project, our team's goal is making a detail analysis on a specific dataset.
+                    </p>
+                    <p>
+                        Our team explored the dataset <a href="https://www.kaggle.com/competitions/kaggle-survey-2022/data">2022 Kaggle Machine Learning & Data Science Survey</a>
+                        to know more about people who is working with data in different industries and the best ways for new data scientists like us to break into the field.
+                    </p>
+                    <p>2022 Kaggle Machine Learning & Data Science Survey is the most comprehensive dataset available on the state of ML and data science. 
+                        Kaggle Machine Learning & Data Science Survey is a competition held annually from 2017 until 2022 to conduct an industry-wide survey with the aim of presenting a truly comprehensive view of the current state of Data Science and Machine Learning. 
+                        The survey took place from 09/16/2022 to 10/16/2022, after Kaggle cleaned the data (Data Cleaning), it received 23,997 responses.
+                    </p>
+                    
+                    <p>The questions in this survey contains many topics here:</p>
+                    <ul>
+                        <li>Biography: capture personal and demographic information about the participant, such as age, gender, location, and student status.</li>
+                     
+                        <li>Education: explore the paricipant learning journey in Data Science: where they studied, which resources were most useful, education level, and research experience.
+                        </li>
+                        <li>Programming skills & experience: ask about participant’s technical background — coding experience, languages, tools, and familiarity with machine learning.</li>
+
+                        <li>Employments: Describes the participant’s current work situation — role, industry, company size, team structure, ML usage, work activities, and income level</li>
+                        <li>Other product used (Cloud computing, Data storage...): Identifies which cloud, data storage, and related tools the participant uses and how much they have invested in them.</li>
+                    </ul>
+                
+                    <p>Through the project, each memember pick a topic and deeply dive into it. In my section, I nvestigated key trends about the data science state among industries, salary ranges and required skills for various data roles and programming language usage patterns.</p>
+                    <p>We can see some analysis result here </p>
+
+                    <h2>The income range distribution</h2>
+                    
+                 
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/income_distribution.html"></iframe>
+                            <figcaption>Participants' current income distribution</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/income_distribtion_by_country.html"></iframe>
+                            <figcaption>Participants' current income distribution</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/income_distribtion_by_role.html"></iframe>
+                            <figcaption>Participants' current income distribution</figcaption>
+                        </figure>
+                    </div>
+
+                  <h2>Tool set for Data-related roles</h2>
+                    
+
+                  <!-- <div class="horizontal-scroll"> -->              
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/sunburst_data_analyst.html"></iframe>
+                            <figcaption>Data Analyst</figcaption>
+                        </figure>
+                    </div>
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/sunburst_data_scientist.html"></iframe>
+                            <figcaption>Data Scientist</figcaption>
+                        </figure>
+                    </div>
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/sunburst_ml_engineer.html"></iframe>
+                            <figcaption>Data Scientist</figcaption>
+                        </figure>
+                    </div>
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/sunburst_ml_engineer.html"></iframe>
+                            <figcaption>Machine Learning Engineer</figcaption>
+                        </figure>
+                    </div>
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/sunburst_research_scientist.html"></iframe>
+                            <figcaption>Research Scientist</figcaption>
+                        </figure>
+                    </div>
+                    <div class="plot-container">
+                        <figure class="plot-inner">
+                            <iframe src="./Images/sunburst_statistician.html"></iframe>
+                            <figcaption>Statistician</figcaption>
+                        </figure>
+                    </div>
+                <!-- </div> -->
+               
+                    <p>Finally, through this project, I have gained my first experience with data science tasks, more clearly know how data science can be applied to solve our problems and strengthen my foundation in data science.</p>
+                </div>
+                
+                </div>
+            </section>
+            
+            <footer class="site-footer">
+                <p>&copy; 2025 Cao Khoi Huynh</p>
+            </footer>
+        </main>
+        
+    </div>
+    <script src="../../../js/sidebar.js"></script>
+    <script src="../../../js/post-navigation.js"></script>
+    <script src="../../../js/modal.js"></script>
+
+</body>
+</html>

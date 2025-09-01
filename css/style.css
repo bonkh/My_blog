@@ -187,10 +187,70 @@ nav a {
     text-align: center; /* Center align text within each figure */
 }
 
-.figure-center img {
-    width: 80%;
-    max-width: 500px; /* Keep images responsive */
-    height: auto; /* Maintain aspect ratio */
+.vertical-figure-container,
+.figure-center {
+    max-width: 100%;
+}
+
+.project-description {
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.project-description iframe {
+    width: 100%;
+    height: calc(100vw * 0.6);
+}
+.horizontal-scroll {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;               /* khoảng cách giữa plots */
+    overflow-x: auto;        /* bật scroll ngang */
+    overflow-y: hidden;      /* ẩn scroll dọc */
+    max-width: 100%;         /* giới hạn theo màn hình */
+    padding: 10px 0;         /* padding trên/dưới cho thoáng */
+    scroll-behavior: smooth;
+}
+
+.plot-container {
+    flex: 0 0 auto;   
+    width: 1200px;     
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.plot-inner {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plot-inner iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(0.7);
+    transform-origin: top center;  /* scale from the middle top */
+}
+
+
+.plot-inner figcaption {
+    text-align: center;
+    margin-top: 10px;
+}
+.plot-figure iframe {
+    display: block;
+    margin: 0 auto; /* Căn giữa iframe */
+}
+.plot-figure figcaption {
+    text-align: center; /* Căn giữa caption */
+    margin-top: 10px; /* Khoảng cách với plot */
+    font-style: italic;
 }
 
 /* Highlighted blockquote style */
@@ -465,27 +525,30 @@ color: #131842;
   }
   
   .project-detail {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     gap: 3rem;
     padding: 2rem 0;
   }
-  
+/*   
   .project-info {
     flex: 1;
     min-width: 250px;
     max-width: 300px;
     font-weight: 500;
     line-height: 1.6;
+  } */
+
+  .project-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 cột bằng nhau */
+    gap: 2rem;                      /* khoảng cách giữa 2 cột */
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;       /* căn giữa và cách dưới */
+    font-weight: 500;
+    line-height: 1.6;
   }
-  
-  .project-description {
-    flex: 2;
-    min-width: 300px;
-    line-height: 1.8;
-    font-size: 1.05rem;
-  }
-  
+
   .project-info h2 {
     font-size: 0.85rem;
     color: var(--dark-blue);
@@ -493,6 +556,19 @@ color: #131842;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
+  
+  
+  .project-info h2 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  .project-description {
+    max-width: 1000px; /* description rộng hơn info */
+    margin: 0 auto;    /* căn giữa */
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  
   
   .project-info p {
     margin-top: 0.3rem;
