@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language identification models evaluation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sidebar.css">
+</head>
+<body>
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+      
+
+    <aside class="sidebar" id="sidebar">
+        <h2 class="sidebar-title">My Blog</h2>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../origami_index.html">Origami Blog</a></li>
+            <li><a href="../../../data_science_index.html"  class="active">Data Science</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer"> 
+            <h3 class="sidebar-subtitle">Contact Me</h3>
+            <nav class="sidebar-nav">
+                <ul class="contact-links">
+                <li>
+                    <a href="https://github.com/bonkh" target="_blank">
+                    <img src="../../../Images/git_icon.png" alt="GitHub" class="icon"> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/caokhoihuynh" target="_blank">
+                    <img src="../../../Images/kaggle_icon.png" alt="Kaggle" class="icon"> Kaggle
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/khoi-huynh-b528b3205/" target="_blank">
+                    <img src="../../../Images/linkedin_icon.png" alt="LinkedIn" class="icon"> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:caokhoi20092003@gmail.com">
+                    <img src="../../../Images/gmail_icon.png" alt="Email" class="icon"> Email
+                    </a>
+                </li>
+                </ul>
+            </nav>
+        </div>
+        <button id="collapse-button" class="collapse-button">«</button>
+    </aside>
+
+    <div class="page-container">
+        <main class="main-content">
+            <section class="project-detail">
+                <div class="project-info">
+                  <h2>— PROJECT NAME</h2>
+                  <p>Language identification models evaluation</p>
+              
+                  <h2>— TIME</h2>
+                  <p>11/2023 - 01/2024</p>
+
+                  <h2>— TEAM SIZE</h2>
+                  <p>Hoan Nguyen (Superviser)</p>
+                  <p>Huynh Cao Khoi </p>
+              
+                  <h2>— ROLE</h2>
+                  <ul>
+                    <li>Data Collecting</li>
+                    <li>Data Preprocessing</li>
+                    <li>Exploratory Data Analysis (EDA)</li>
+                    <li>Model Evaluation</li>
+                    <li>Evaluation result analysis</li>
+                  </ul>
+              
+                  <h2>— TOOLS</h2>
+                  <ul>
+                    <li>Data Collecting : Hugging Face API</li>
+                    <li>Data Preprocessing: Polars, sentence_splitter, pyspark,unicodedata, semhash, cleanlab, ...</li>
+                    <li>EDA: Matplotlib, Seaborn,...</li>
+                    <li>Model Evaluation: pytorch</li>
+                    <li>Evaluation result analysis: </li>
+                  </ul>
+                </div>
+              
+                <div class="project-description">
+                    <p>
+                        This project is the work in my intership for Mr.Hoan Nguyen. In this project,I try to research and find the current state of the language indentification problem, 
+                        which is an important element in many language models.
+                    </p>
+                    
+                    <p>
+                        In this project, I have to do these bellow main tasks:
+                    </p>
+
+                    <ul>
+                        <li>Find and study about text datasets for language identification task.</li>
+                        <li>Preprocess and combined all datasets together</li>
+                        <li>EDA the dataset</li>
+                        <li>Evaluate models in <a href="https://batdongsan.com.vn/" target="_blank">this list </a> in many metrics (even the runtime performance) with the combined dataset.</li>
+                        <li>Analyze the results </li>
+                    </ul>
+        
+                    <h3>Task 01: Collect text dataset</h3>
+                   
+                    <p>
+                        The full list of text dataset can be found in <a href="https://docs.google.com/spreadsheets/d/1G12FaSMelNX87dclhm9dE3d5ZRO99B2hoFE1ufB2Zvg/edit?usp=sharing">this spreedsheet</a> 
+                    </p>
+                    <p>
+                        These datasets consist of training text dataset, or benchmark dataset, which is published mostly in recent years, cover a wide range of topics and domains
+                    </p>
+
+                    <p>
+                        The collected data is in this format:
+                    </p>
+
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/raw_data_process.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Raw data</figcaption>
+                        </figure>
+                    </div>  
+
+                    <p>
+                        As you can see, these dataset was consist of two main attributes:
+                    </p>
+                    <ul>
+                        <li>Text: This is the main text </li>
+                        <li>Language: The language code, which normally in the format language code(ISO 639-3) - language script(ISO 15924)</li>
+                
+                    </ul>
+
+                    <h3>
+                        Task 02: Merge and preprocess the combined text datasets
+                    </h3>
+
+                    <p>
+                        After downloading the dataset from multiple sources, I performed some simple preprocessing steps in each dataset.
+                    </p>
+
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/raw_data_process.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Raw data processing pipeline</figcaption>
+                        </figure>
+                    </div>
+
+                    <p>
+                        In the handling long text step, I used <a href="https://pypi.org/project/iges-sentence-splitter/">sentence-split</a> package to split the text into sentences more accurately. 
+                    </p>
+
+                    <p>
+                        After that, I combined all the sources into one dataset, using this process:
+                    </p>
+
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/combined_data_process.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Processing pipeline for combined data</figcaption>
+                        </figure>
+                    </div>
+
+                    <p>
+                        With the combined dataset, I performed these main steps to clean it:
+                    </p>
+                    <h4>
+                        Step 01: Clean the programming language pattern
+                    </h4>
+
+                    <p>
+                        Programming language is not the natural language, I considered it as noise in a LID dataset
+                    </p>
+                    <p>
+                        I simply used <a href="https://docs.python.org/3/library/re.htmlz">re</a> package to find the programming language pattern inside the text. 
+                        The text containing mostly programming language pattern will be removed. In others, I cleand all the possible patterns.
+                    </p>
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/programming_language_removal.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Progamming language removing pipeline</figcaption>
+                        </figure>
+                    </div>
+
+                    <h4>
+                        Step 02: Detect abnormal symbols in texts
+                    </h4>
+                    <p>
+                        Symbols such as #, ^, ~, -, and non-Unicode characters negatively affect text quality and do not contribute useful information for language identification.
+                    </p>
+                    <p>
+                        To detect the abnormal symbols, I used <a href="https://docs.python.org/es/3.13/library/unicodedata.html">unicodedata</a> package to detect the character which is not ịn types: letter, mark, number
+                    </p>
+
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/symbols_removal.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Abnormal symbols removing pipeline</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <h4>
+                        Step 03: Clean the text with high ratio of number
+                    </h4>
+                    <p>
+                        Texts consisting mostly numbers, can be math calculation, equation, or numeric tables, they should also be removed.
+                    </p>
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/digit_process.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Digit processing pipeline</figcaption>
+                        </figure>
+                    </div>
+
+                    <h4>
+                        Step 04: Select mostly character texts
+                    </h4>
+
+                    <p>
+                        After multiple cleaning steps, some texts may become empty or just contain very little information left, now we need to keep only texts that contain a sufficient proportion of informative characters.
+                    </p>
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/letter_ratio.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <!-- <figcaption></figcaption> -->
+                        </figure>
+                    </div>
+
+                    <p>
+                        The final dataset is stored in parquet files. The storage is significantly reduced compared with the tsv files in the previous step.
+                    </p>
+
+                    <h4>
+                        Subsampling the data using SemHash and Cleanlab
+                    </h4>
+
+                    <p>
+                        The data now contains about 48,320,698 samples, which is too large to run the evaluation step on the current device. 
+                        Therefore, the data must be downsampled, retaining only the highest-quality samples.
+                    </p>
+
+                    <p>
+                        Here, I used <a href="https://github.com/MinishLab/semhash">SemHash</a>, a lightweight, multimodal library, used for semantic deduplication, outlier filtering, and representative sample selection. 
+                    </p>
+
+                    <p>
+                        SemHash was applied separatedly to each language:
+                    </p>
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/semhash_apply.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>SemHash application pipeline</figcaption>
+                        </figure>
+                    </div>
+
+                    <p>
+                        Finally, the data is stored in many parquet files, one per each language. For more details, visit this <a href="https://www.kaggle.com/code/caokhoihuynh/semhash-apply">notebook</a>
+                    </p>
+
+                    <p>
+                        In a language dataset, an important issue is language misslabeling. 
+                        The incorrect labeled samples can significantly affect the training process, and negativly impact the model performance.
+                    </p>
+                    <p>
+                        To solve this problem, I used <a href="https://github.com/cleanlab/cleanlab">Cleanlab</a>, a library which works with any ML model by analyzing model outputs like predicted probabilities and feature embeddings 
+                        to identify problems such as label errors, outliers, near duplicates, and other data quality issues.
+    
+                    </p>
+                    <p>
+                        In Cleanlab, there are two important elements:
+                    </p>
+
+                    <ul>
+                        <li>The embeder: Create the embedding vectors of the given text </li>
+                        <li>Classifier: Trained from the data, to create the predicted language probabilities for a given text </li>
+                
+                    </ul>
+
+                    <p>After trying with multiple setting of embedder and classifier, I have these main settings. The detailed implementation can be found in <a href="https://www.kaggle.com/code/caokhoihuynh/check-the-data-issue-cleanlab">this notebook</a></p>
+                    <ul>
+                        <li>Embeder: FastText - Classifier: Logistic regression, API: cleanlab.classification.CleanLearning </li>
+                        <li>Embeder: Transformer + FastText - Classifier: XGB classifier, API: cleanlab.classification.CleanLearning  </li>
+                        <li>Embeder: FastText - Classifier: Logistic regression, API: cleanlab.filter.find_label_issues </li>
+                        <li>Embeder: Transformer - Classifier: Logistic regression, API: cleanlab.filter.find_label_issues  </li>
+                    </ul>
+
+                    <p>
+                        Different settings will result in a different label-cleaned versions of dataset. From that, I ensembled all of them, using a simple strategy that a text, which will have a highly confident about the label quality, if it appear in all versions.
+                        The detailed implementation can be found in <a href="https://www.kaggle.com/code/caokhoihuynh/ensemble-data-02"> this notebook</a>
+                    </p>
+
+                    <p>
+                        After all of these steps, I have a cleaned version of the dataset, containing about 1,5 million samples. And it still is not completely clean. 🥲🥲🥲
+                    </p>
+
+                    <h3>
+                        Task 03: Doing EDA for the collected dataset
+                    </h3>
+
+                    <p>
+                        The detailed analysis on the dataset can be found in <a href="https://www.kaggle.com/code/caokhoihuynh/eda-multilingual-dataset">this notebook</a>
+                    </p>
+                    <p>
+                        Some key features about the dataset can be listed:
+                    </p>
+
+                    <ul>
+                        <li>Number of samples: 1,570,807 </li>
+                        <li>Number of supported languages: 1862</li>
+                        <li>Number of sources collected: 17</li>
+                    </ul>
+
+                    <h3>
+                        Task 04: Evaluate the cleaned dataset with models
+                    </h3>
+                    <p>
+                        With 9 models, now we will evaluate all these models with the dataset.
+                    </p>
+
+                    <p>
+                        Let's consider the supporting language list for all these models
+                    </p>
+
+                    <ul>
+                        <li>papluca: 20 possible labels</li>
+                        <li>llama: 146 possible labels</li>
+                        <li>neuml_langid: 175 possible labels</li>
+                        <li>openlid_v2: 194 possible labels</li>
+                        <li>alexneakameni: 195 possible labels</li>
+                        <li>facebook_fasttext: 211 possible labels</li>
+                        <li>conlid: 1869 possible labels</li>
+                        <li>lmu_glotlid: 1873 possible labels</li>
+                    </ul>
+
+                    <p>
+                        We can see the papluca models just support a limited set of languages (20 languages), while conlid and glotlid can support more than 1800 languages. Other models can support around 100-200 languages.
+                    </p>
+                    <p>
+                        Here, to ensure a fair evaluation between models, we can consider three scenarios:
+                    </p>
+                    <ul>
+                        <li><strong>Scenario 01</strong> Evaluate all models, except papluca, on a 83 languages dataset (this is the overlap of supported languages of all other models).</li>
+                        <li><strong>Scenario 02</strong> Evaluate all models, including papluca, in 17 languages dataset.</li>
+                        <li><strong>Scenario 03</strong>: Evaluate only conlid and glotlid in a 1810 languages dataset.</li>
+                    </ul>
+
+                    <p>
+                        I evaluated each language separately. I stored the accuracy of each model for a language, also the total inference time and the inference time per sample for that language also.
+                    </p>
+
+                    
+
+                    <p>
+                        Beside that, I also stored the detailed prediction results of all models for each sample, for future analysis. 
+                    </p>
+
+                    <p>The full evaluatation code can be found in the notebook <a href="https://www.kaggle.com/code/caokhoihuynh/run-evaluation-cpu">CPU evaluation</a> and <a href="https://www.kaggle.com/code/caokhoihuynh/run-evaluation-gpu">GPU evaluation</a></p>
+        
+                    <h3>
+                        Task 05: Analyze the evaluation resuls
+                    </h3>
+
+                    <p>The analysis can be found in <a>this notebook</a></p>
+                    <p>Here, I will summarize some key insights:</p>
+
+                    <h4>
+                        01. Memory usage
+                    </h4>
+
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/RAM_usage.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>RAM usage for CPU evaluation</figcaption>
+                        </figure>
+                        <figure class="figure-center">
+                            <img src="./Images/RAM_usage.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>VRAM usage for GPU evaluation</figcaption>
+                        </figure>
+                    </div>
+
+                    <p>
+                        Look at the RAM usage, we can see that models used varies from hundred to thousand MB, to consider more clearly, we will use the paleto plot to show the relation between memory usage and the model accuracy
+                    </p>
+
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/scen_01_ram_vs_metrics.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Pareto plot for RAM usage vs metrics in scenario 01</figcaption>
+                        </figure>
+                        <figure class="figure-center">
+                            <img src="./Images/scen_02_ram_vs_metrics.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Pareto plot for RAM usage vs metrics in scenario 02</figcaption>
+                        </figure>
+                    </div>
+
+
+                    <p></p>
+
+                    <h4>
+                        02. Throughtput
+                    </h4>
+                    
+                    <div class="figure-container">
+                        <figure class="figure-center">
+                            <img src="./Images/scen_01_thoughput_vs_metrics.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Pareto plot for RAM usage vs metrics in scenario 01</figcaption>
+                        </figure>
+                        <figure class="figure-center">
+                            <img src="./Images/scen_02_thoughput_vs_metrics.png" alt="plot1" class="clickable-img" style="width:300px;">
+                            <figcaption>Pareto plot for RAM usage vs metrics in scenario 02</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="site-footer">
+                <p>&copy; 2025 Cao Khoi Huynh</p>
+            </footer>
+        </main>
+        
+    </div>
+    <script src="../../../js/sidebar.js"></script>
+    <script src="../../../js/post-navigation.js"></script>
+    <script src="../../../js/modal.js"></script>
+
+</body>
+</html>
