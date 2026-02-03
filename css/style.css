@@ -530,14 +530,7 @@ color: #131842;
     gap: 3rem;
     padding: 2rem 0;
   }
-/*   
-  .project-info {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    font-weight: 500;
-    line-height: 1.6;
-  } */
+
 
   .project-info {
     display: grid;
@@ -548,6 +541,10 @@ color: #131842;
     font-weight: 500;
     line-height: 1.6;
   }
+  .info-item {
+  display: block;
+    }
+
 
   .project-info h2 {
     font-size: 0.85rem;
